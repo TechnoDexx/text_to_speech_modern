@@ -17,12 +17,17 @@ langs_has_run = False
 
 class GetLangs:
     """
-    Класс, получающий список языков, поддерживаемых библиотекой GTTS
+    Класс, получающий и выыводящий на экран список языков, поддерживаемых библиотекой GTTS
     """
     def __init__(self):
         self.has_run = False
 
     def show_langs(self):
+        """
+        Функция, распечатывающая список языков, поддерживаемых библиотекой GTTS
+        :return: None
+        :rtype: None
+        """
         if self.has_run:
             return
         else:
