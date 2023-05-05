@@ -1,5 +1,6 @@
 import io
 
+import langdetect.lang_detect_exception
 from gtts import gTTS
 
 from utils.specials import enablePrint, disablePrint
@@ -11,7 +12,7 @@ import pygame
 enablePrint()
 
 
-def speak_from_file(file, mode='r'):
+def speak_from_file(file, mode='r', lang_for_digit='ru'):
     """
     Функция читает файл построчно, определяет язык текста и зачитывает его
     :param file: имя файла
@@ -33,7 +34,12 @@ def speak_from_file(file, mode='r'):
                 continue
             else:
                 # Определение языка загруженной строки
-                detect_lang = detect(txt)
+                try:
+                    detect_lang = detect(txt)
+                except langdetect.lang_detect_exception.LangDetectException:
+                    print(lang_for_digit)
+                    speak(txt, lang=lang_for_digit)
+                    continue
                 print('{0}'.format(detect_lang))
 
                 try:

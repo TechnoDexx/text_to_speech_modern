@@ -1,9 +1,10 @@
+123
 Внимание!Воздушная тревога!
 # Attention! Air Alert!
-Увага! Повітряна тривога!
+# Увага! Повітряна тривога!
 # ¡Atención! ¡Alerta aérea!
-ყურადღება! საჰაერო გაფრთხილება!
+# ყურადღება! საჰაერო გაფრთხილება!
 # Qaphela! Isexwayiso Somoya!
-Uppmärksamhet! Luftvarning!
+# Uppmärksamhet! Luftvarning!
 # Huomio! Ilmahälytys!
-Attention! Alerte aérienne!
+# Attention! Alerte aérienne!
