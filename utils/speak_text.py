@@ -12,9 +12,13 @@ import pygame
 enablePrint()
 
 
-def speak_from_file(file, mode='r', lang_for_digit='ru'):
+def speak_from_file(file, mode='r', lang_for_digit='ru', debug=False):
     """
     Функция читает файл построчно, определяет язык текста и зачитывает его
+    :param debug: вывод отладочной информации (по умолчанию выключен)
+    :type debug: boolean
+    :param lang_for_digit: язык для озвучивания цифр (по умолчанию 'ru')
+    :type lang_for_digit: string
     :param file: имя файла
     :type file: string
     :param mode: режим открытия файла ('r' - чтение, по умолчанию)
@@ -37,15 +41,18 @@ def speak_from_file(file, mode='r', lang_for_digit='ru'):
                 try:
                     detect_lang = detect(txt)
                 except langdetect.lang_detect_exception.LangDetectException:
-                    print(lang_for_digit)
+                    if debug:
+                        print(lang_for_digit)
                     speak(txt, lang=lang_for_digit)
                     continue
-                print('{0}'.format(detect_lang))
+                if debug:
+                    print('{0}'.format(detect_lang))
 
                 try:
                     speak(txt, lang=detect_lang)
                 except ValueError as err:
-                    print(err)
+                    if debug:
+                        print(err)
                     continue
 
     print('Done.')

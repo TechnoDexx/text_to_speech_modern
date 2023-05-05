@@ -38,4 +38,4 @@ class GetLangs:
 
 if __name__ == '__main__':
     # get_words('text.txt', 'r')
-    speak_from_file('text.txt', 'r')
+    speak_from_file('text.txt', 'r', debug=True)
